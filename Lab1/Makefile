@@ -7,8 +7,6 @@ help:
 init:
 	poetry install
 	poetry run pre-commit install
-	poetry run mypy --install-types
-	cp .env.example .env
 
 check:
 	poetry run black .
