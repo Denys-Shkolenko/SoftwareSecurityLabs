@@ -51,6 +51,19 @@ class CaesarApp:
         self.text = tk.Text(self.root, wrap=tk.WORD)
         self.text.pack(expand=True, fill=tk.BOTH)
 
+        # Info menu setup
+        self.info_menu = tk.Menu(self.menu)
+        self.menu.add_cascade(label="Info", menu=self.info_menu)
+        self.info_menu.add_command(label="About", command=self._show_info)
+
+    def _show_info(self) -> None:
+        """
+        Display developer's information.
+        """
+        messagebox.showinfo(
+            "About", "Developer: Denys Shkolenko <denys.shkolenko@gmail.com>"
+        )
+
     def _open_file(self) -> None:
         """
         Open a file and load its content into the text widget.
